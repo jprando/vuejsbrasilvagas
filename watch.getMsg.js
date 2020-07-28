@@ -16,9 +16,9 @@ const getMsg = ({body, title, labels, html_url}) =>  {
     .join(c)
   })
 
-  const msgTitle = title.replace(']',']\n')
+  const msgTitle = title.trim().replace(']',']\n')
   const msgLabels = labels.map(label => label.name).join(', ')
-  const msgBody = !body.includes(NOBODY) ? '\n'+body+'...\n' : ''
+  const msgBody = !body.includes(NOBODY) ? '\n```'+body+'```...\n' : ''
   
   let msg = `#vaga ${msgTitle}\n\nlabels: ${msgLabels}\n${msgBody}\n${html_url}`
 
