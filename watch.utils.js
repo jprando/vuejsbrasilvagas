@@ -38,7 +38,8 @@ const vuejsOnly = issues => issues.filter(i =>
 )
 
 const getAttributes = issues => issues.map(
-  ({html_url, title, labels, body}) => ({html_url, title, labels, body})
+  ({html_url, title, labels, body}) =>
+  ({html_url, title, labels, body})
 )
   
 const sendMessage = issues => issues.map(getMsg).forEach(telegramSendMessage)

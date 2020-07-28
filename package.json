@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "pm2 start index.js --container --node-version 12-alpine --image-name jprando/vuejsbrasilvagas --dist"
+  },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "telegraf": "^3.38.0"
   },
   "devDependencies": {
     "pm2": "^4.4.0"

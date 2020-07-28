@@ -1,5 +1,9 @@
 const { getIssues } = require('./getIssues')
-const { vuejsOnly, getAttributes, sendMessage } = require('./watch.utils')
+const {
+  vuejsOnly,
+  getAttributes,
+  sendMessage
+} = require('./watch.utils')
 
 const watch = async () => {
   try {
