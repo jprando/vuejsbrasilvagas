@@ -1,5 +1,8 @@
 FROM keymetrics/pm2:12-alpine
 
+LABEL maintainer="jeudiprando@gmail.com"
+LABEL description="https://t.me/vuejsbrasil"
+
 ENV TELEGRAM_BOT_TOKEN=
 ENV TELEGRAM_CHAT_ID=
 ENV LAST_DATE_REQUEST=
