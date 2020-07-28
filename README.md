@@ -1,4 +1,4 @@
-# VueJS Brasil Vagas 🤖
+# VueJS Brasil Vagas Telegram 🤖
 
 Procuro vagas de VueJS por ai e publico no grupo [@vuejsbrasil](https://t.me/vuejsbrasil)
 
