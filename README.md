@@ -1,4 +1,6 @@
-# VueJS Brasil Vagas - BOT 🤖
+# VueJS Brasil Vagas 🤖
+
+Procuro vagas de VueJS por ai e publico no grupo [@vuejsbrasil](https://t.me/vuejsbrasil)
 
 ## Variáveis de ambiente
 
