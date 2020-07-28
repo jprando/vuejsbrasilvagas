@@ -11,7 +11,7 @@ if(!CHAT_ID) {
   process.exit(1)
 }
 
-const config = { disable_web_page_preview: true }
+const config = { disable_web_page_preview: true, parse_mode:'Markdown' }
 
 const bot = new Telegraf(BOT_TOKEN)
 bot.start((ctx) => ctx.reply('Procuro vagas de VueJS por ai e publico no grupo @vuejsbrasil'))

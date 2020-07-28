@@ -14,13 +14,25 @@ const getMsg = ({body, title, labels, html_url}) =>  {
     .filter(w => w !== '')
     .slice(0, 65)
     .join(c)
-  })
+  });
 
-  const msgTitle = title.trim().replace(']',']\n')
-  const msgLabels = labels.map(label => label.name).join(', ')
-  const msgBody = !body.includes(NOBODY) ? '\n```'+body+'```...\n' : ''
+  body = body.split('<!--')
+    .map(t => t.split('-->'))
+    .map(t => t.length === 1 ? t : t.slice(1))
+    .flatMap(t => t)
+    .map(t => t.trim())
+    .join(' ').trim()
   
-  let msg = `#vaga ${msgTitle}\n\nlabels: ${msgLabels}\n${msgBody}\n${html_url}`
+  const msgTitle = title.split('[')
+    .map(t => t.split(']'))
+    .flatMap(t => t.length === 1 ? t : `${t[0].toUpperCase()}\n\n${t[1].trim()}`)
+    .map(t => t.replace('/',' ').trim())
+    .join(' ').trim()
+
+  const msgLabels = labels.map(label => label.name).join(', ').trim().toLowerCase()
+  const msgBody = !body.includes(NOBODY) ? '```\n'+body+'...```\n' : ''
+  
+  let msg = `#VAGA ${msgTitle}\n_${msgLabels}_\n\n${msgBody}\n${html_url}`;
 
   return msg.trim()
 }
