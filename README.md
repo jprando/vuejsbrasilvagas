@@ -50,6 +50,8 @@ Para ter acesso a informação do `chat id` de uma conversa de um grupo ou uma c
 6. será exibido na conversa o `chat id` anote-o.
 7. você pode interromper a execução do comando `tepe test` do passo 4.
 
+> essa não é a unica forma de se obter o chat id de uma conversa no telegram.
+
 ## Docker
 
 [jprando/vuejsbrasilvagas](https://hub.docker.com/r/jprando/vuejsbrasilvagas) no docker hub.
