@@ -6,6 +6,8 @@ Definição de "por ai", issues de repositórios no github com essa finalidade, 
 - [vuejs-br/vagas](https://github.com/vuejs-br/vagas)
 - [frontendbr/vagas](https://github.com/frontendbr/vagas).
 
+Este projeto foi feito para ser utilizado no grupo [VueJS Brasil 🇧🇷](https://t.me/vuejsbrasil) do telegram, visite o nosso grupo 😉.
+
 ## Variáveis de ambiente
 
 Variáveis de ambiente utilizadas no projeto.
@@ -20,17 +22,23 @@ Chat ID do usuário ou do grupo para o qual o bot deve enviar as mensagens.
 
 ## Telegram
 
-Para criar um bot no [telegram](https://telegram.org/), você precisar iniciar uma conversa com o [BotFather](https://t.me/BotFather)(<-- clique aqui para que isso aconteça) no [telegram](https://telegram.org/).
+Para criar um bot no [telegram](https://telegram.org/), você precisa iniciar uma conversa com o [BotFather](https://t.me/BotFather) (<-- clique aqui para que isso aconteça) no [telegram](https://telegram.org/).
 
-Uma informação importante que você precisa anotar, pois vai precisar nos passos a seguir, é o **TOKEN** do bot que o BotFather vai lhe informar quando você concluir a criação do bot.
+Uma informação importante que você precisa anotar, pois vai precisar nos passos a seguir, é o **TOKEN** do bot que o BotFather vai lhe informar quando você concluir, com sucesso, a criação do bot.
 
-### Obtendo o chat id
+### Enviando mensagem para o lugar certo
 
-Para ter acesso a informação do `chat id` de uma conversa de um grupo(número negativo) ou pessoa(número positivo), recomendo utilizar o aplicativo, do tipo cli, [tepe](https://crates.io/crates/tepe).
+No telegram as conversas tem um identificador chamado de `chat id`.
+
+O `chat id` referente a uma conversa será um número:
+- de um grupo será um número negativo
+- de uma pessoa será um número positivo
+
+Para ter acesso a informação do `chat id` de uma conversa de um grupo ou uma conversa privada de uma pessoa, recomendo utilizar o aplicativo, do tipo cli, [tepe](https://crates.io/crates/tepe).
 
 `tepe` é implementado em [rust-lang](https://www.rust-lang.org/) para utilizá-lo siga esses passos:
 
->os comandos devem ser executados em um terminal
+> os comandos devem ser executados em um terminal
 
 1. [Instale o rust](https://www.rust-lang.org/tools/install)  
 2. reinicie o seu computador ou execute: `source ~/.cargo/env` _(no linux)_.
@@ -44,9 +52,15 @@ Para ter acesso a informação do `chat id` de uma conversa de um grupo(número 
 
 [jprando/vuejsbrasilvagas](https://hub.docker.com/r/jprando/vuejsbrasilvagas) no docker hub.
 
+[Documentação da instalação do docker](https://docs.docker.com/get-docker/)
+
+> os comandos devem ser executados em um terminal
+
 O comando abaixo vai:
 - Baixar a última versão da imagem, gerada no docker hub, baseado nos fontes desse repositório.
 - Criar e iniciar o container no docker.
+
+> voce deve substituir os "???" por seu valor correspondente
 
 ```sh
 docker run --name onomequevcquizer-telegram-bot-srv \
@@ -55,6 +69,10 @@ docker run --name onomequevcquizer-telegram-bot-srv \
 	-e TELEGRAM_CHAT_ID=??? \
 -d jprando/vuejsbrasilvagas
 ```
+
+Para verificar se o container esta em execução, execute:
+
+`docker ps`
 
 Para visualizar o log do que esta acontecendo, execute:
 
