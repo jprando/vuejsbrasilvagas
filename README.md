@@ -45,7 +45,7 @@ Para ter acesso a informação do `chat id` de uma conversa de um grupo ou uma c
 1. [Instale o rust](https://www.rust-lang.org/tools/install)  
 2. reinicie o seu computador ou execute: `source ~/.cargo/env` _(no linux)_.
 3. execute: `cargo install tepe` _(você vai precisar ter algum compilador C/C++ instalado)_.
-4. execute o comando abaixo antes de adicionar o bot a um grupo ou interagir come ele no privado: `tepe test -t token_do_seu_bot_aqui`
+4. antes de adicionar o bot, que você criou, a um grupo ou interagir come ele no privado, execute: `tepe test -t token_do_seu_bot_aqui`
 5. adicione o seu bot ao grupo ou envie qualquer mensagem para ele no privado.
 6. será exibido na conversa o `chat id` anote-o.
 7. você pode interromper a execução do comando `tepe test` do passo 4.
