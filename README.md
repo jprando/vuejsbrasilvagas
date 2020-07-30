@@ -86,6 +86,32 @@ Para visualizar o log do container, execute:
 docker logs onomequevcquizer-tgbot-srv
 ```
 
+## Makefile
+
+> somente para linux, não testei a utilização do comando make no windows
+
+Este repositório tem um arquivo chamado [makefile](/makefile) para facilitar a execução desse projeto.
+
+Em um terminal, estando na pasta deste projeto, ao executar o comando:
+
+```sh
+make
+```
+
+ou
+
+```sh
+make help
+```
+
+Será exibido algumas opções para facilitar o gerenciamento da vida do container e imagem.
+
+Editando o arquivo, configurando as variáveis `TELEGRAM_BOT_TOKEN` e `TELEGRAM_CHAT_ID` que se encontram no inicio do arquivo, tudo o que você precisará executar é:
+
+```sh
+make deploy
+```
+
 ## Azure Function
 
 Versão "Azure Functions (serverless)" desse projeto.
