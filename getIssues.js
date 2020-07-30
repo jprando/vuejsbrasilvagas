@@ -1,17 +1,28 @@
 const axios = require('axios')
-const { GITHUB_API, ISSUES_URL } = require('./config')
+const { GITHUB_API, issuesUrl } = require('./config')
 
 const http = axios.create({
   baseURL: GITHUB_API
 })
 
-let lastDateRequest = process.env.LAST_DATE_REQUEST || new Date()
-/// lastDateRequest = '2020-07-27T23:03:00Z'
+let lastDateRequest = process.env.LAST_DATE_REQUEST || new Date().toISOString()
 
-const getIssues = async () => {
-  const result = await http.get(ISSUES_URL + lastDateRequest).then(r => r.data)
-  lastDateRequest = new Date()
-  return result
+const getIssues = async repoName => {
+  try {
+    const result = await http.get(issuesUrl(repoName) + lastDateRequest)
+      .then(r => r.data)
+    lastDateRequest = new Date()
+    
+    const rateLimitExceeded = 'API rate limit exceeded for'
+    if (result.message && result.message.startsWith(rateLimitExceeded)) {
+      throw new Error(result.message)
+    }
+    
+    return result
+  } catch(err) {
+    console.error('getIssues', err)
+    throw err
+  }
 }
 
 module.exports = { getIssues }

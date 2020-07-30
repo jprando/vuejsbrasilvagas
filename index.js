@@ -1,7 +1,20 @@
 const { watch } = require('./watch')
 
-watch()
+const githubRepos = [
+  'vuejs-br/vagas',
+  'frontendbr/vagas'
+]
 
-setInterval(watch, 1000 * 60 * 60 /* 1 hour */)
+const watchAll = () => {
+  githubRepos.forEach(watch)
+}
 
-console.log('VueJS Brasil Vagas iniciado...')
+watchAll()
+
+const ONE_HOUR = 1000 * 60 * 60
+setInterval(watchAll, ONE_HOUR)
+
+console.log(
+  'VueJS Brasil Vagas iniciado...\n',
+  '- ' + githubRepos.join('\n - ')
+)

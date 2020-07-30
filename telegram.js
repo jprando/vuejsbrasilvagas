@@ -1,21 +1,23 @@
 const { Telegraf } = require('telegraf')
-const { BOT_TOKEN, CHAT_ID } = require('./config')
+const { BOT_TOKEN, CHAT_ID, ERRO401, ERRO400, STARTMSG } = require('./config')
 
 if(!BOT_TOKEN) {
-  console.error('TelegramError: 401: TELEGRAM_BOT_TOKEN environment is required')
+  console.error(ERRO401)
   process.exit(1)
 }
 
 if(!CHAT_ID) {
-  console.error('TelegramError: 400: TELEGRAM_CHAT_ID environment is required')
+  console.error(ERRO400)
   process.exit(1)
 }
 
 const config = { disable_web_page_preview: true, parse_mode:'Markdown' }
 
 const bot = new Telegraf(BOT_TOKEN)
-bot.start((ctx) => ctx.reply('Procuro vagas de VueJS por ai e publico no grupo @vuejsbrasil'))
+bot.start((ctx) => ctx.reply(STARTMSG))
 bot.launch()
+
+bot.telegram.getChat(CHAT_ID).then(console.info)
 
 const telegramSendMessage = msg => {
   try {
