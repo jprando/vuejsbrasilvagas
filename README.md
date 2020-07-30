@@ -65,7 +65,7 @@ O comando abaixo vai:
 > voce deve substituir os "???" por seu valor correspondente
 
 ```sh
-docker run --name onomequevcquizer-telegram-bot-srv \
+docker run --name onomequevcquizer-tgbot-srv \
 	--restart=always \
 	-e TELEGRAM_BOT_TOKEN=??? \
 	-e TELEGRAM_CHAT_ID=??? \
@@ -76,9 +76,9 @@ Para verificar se o container esta em execução, execute:
 
 `docker ps`
 
-Para visualizar o log do que esta acontecendo, execute:
+Para visualizar o log do container, execute:
 
-`docker logs onomequevcquizer-telegram-bot-srv`
+`docker logs onomequevcquizer-tgbot-srv`
 
 ## Azure Function
 
