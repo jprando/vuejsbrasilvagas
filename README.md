@@ -34,6 +34,8 @@ O `chat id` referente a uma conversa será um número:
 - de um grupo será um número negativo
 - de uma pessoa será um número positivo
 
+### Obtendo o chat id
+
 Para ter acesso a informação do `chat id` de uma conversa de um grupo ou uma conversa privada de uma pessoa, recomendo utilizar o aplicativo, do tipo cli, [tepe](https://crates.io/crates/tepe).
 
 `tepe` é implementado em [rust-lang](https://www.rust-lang.org/) para utilizá-lo siga esses passos:
