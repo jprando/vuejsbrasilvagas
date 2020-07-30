@@ -13,3 +13,7 @@ Token do bot criado no telegram
 ### TELEGRAM_CHAT_ID
 
 Chat ID do usuário ou grupo para o qual o bot enviara as mensagens
+
+## Docker
+
+https://hub.docker.com/r/jprando/vuejsbrasilvagas
