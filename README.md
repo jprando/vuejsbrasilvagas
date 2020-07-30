@@ -4,7 +4,7 @@ Procuro vagas de VueJS por ai e publico em um grupo do telegram.
 
 Definição de "por ai", issues de repositórios no github com essa finalidade, exemplos:
 - [vuejs-br/vagas](https://github.com/vuejs-br/vagas)
-- [frontendbr/vagas](https://github.com/frontendbr/vagas).
+- [frontendbr/vagas](https://github.com/frontendbr/vagas)
 
 Este projeto foi feito para ser utilizado no grupo [VueJS Brasil 🇧🇷](https://t.me/vuejsbrasil) do telegram, visite o nosso grupo 😉.
 
