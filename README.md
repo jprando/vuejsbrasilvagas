@@ -92,7 +92,7 @@ docker logs onomequevcquizer-tgbot-srv
 
 Este repositório tem um arquivo chamado [makefile](/makefile) para facilitar a execução desse projeto.
 
-Em um terminal, estando na pasta deste projeto, ao executar o comando:
+Em um terminal, estando na pasta com os arquivos deste projeto, ao executar o comando:
 
 ```sh
 ~/projetos/vuejsbrasilvagas> make
