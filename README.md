@@ -46,7 +46,7 @@ Para ter acesso a informação do `chat id` de uma conversa de um grupo ou uma c
 2. reinicie o seu computador ou execute: `source ~/.cargo/env` _(no linux)_.
 3. execute: `cargo install tepe` _(você vai precisar ter algum compilador C/C++ instalado)_.
 4. execute: `tepe test -t token_do_seu_bot_aqui`
-5. adicione o seu bot ao grupo ou envie qualquer mensagem para ele no privado.
+5. adicione o seu bot ao grupo do telegram ou envie qualquer mensagem para ele no privado.
 6. será exibido na conversa o `chat id` anote-o.
 7. você pode interromper a execução do comando `tepe test` do passo 4.
 
