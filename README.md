@@ -74,11 +74,15 @@ docker run --name onomequevcquizer-tgbot-srv \
 
 Para verificar se o container esta em execução, execute:
 
-`docker ps`
+```sh
+docker ps
+```
 
 Para visualizar o log do container, execute:
 
-`docker logs onomequevcquizer-tgbot-srv`
+```sh
+docker logs onomequevcquizer-tgbot-srv
+```
 
 ## Azure Function
 
