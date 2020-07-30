@@ -95,22 +95,28 @@ Este repositório tem um arquivo chamado [makefile](/makefile) para facilitar a 
 Em um terminal, estando na pasta deste projeto, ao executar o comando:
 
 ```sh
-make
+~/projetos/vuejsbrasilvagas> make
 ```
 
 ou
 
 ```sh
-make help
+~/projetos/vuejsbrasilvagas> make help
 ```
 
-Será exibido algumas opções para facilitar o gerenciamento da vida do container e imagem.
+Será exibido algumas opções para facilitar o gerenciamento do container e imagem desse projeto no docker.
 
-Editando o arquivo, configurando as variáveis `TELEGRAM_BOT_TOKEN` e `TELEGRAM_CHAT_ID` que se encontram no inicio do arquivo, tudo o que você precisará executar é:
+Edite o arquivo e configure as variáveis, que se encontram no ínicio do arquivo:
+
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
+
+Uma vez configurado corretamente, tudo o que você precisa executar para ter esse projeto funcionando é:
 
 ```sh
-make deploy
+~/projetos/vuejsbrasilvagas> make deploy
 ```
+
 
 ## Azure Function
 
