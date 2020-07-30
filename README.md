@@ -82,7 +82,7 @@ Para visualizar o log do que esta acontecendo, execute:
 
 ## Azure Function
 
-Versão "Azure Functions/serverless" desse projeto.
+Versão "Azure Functions (serverless)" desse projeto.
 
 https://github.com/vuejs-br/vagas-telegram-bot
 
