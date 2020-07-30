@@ -80,8 +80,6 @@ Para visualizar o log do que esta acontecendo, execute:
 
 `docker logs onomequevcquizer-telegram-bot-srv`
 
-> "onomequevcquizer-telegram-bot-srv" deve ser o mesmo utilizado ao criar e iniciar o container, caso tenha informado outro nome para o container.
-
 ## Azure Function
 
 Versão "Azure Functions (serverless)" desse projeto.
