@@ -88,7 +88,7 @@ docker logs onomequevcquizer-tgbot-srv
 
 ## Makefile
 
-> somente para linux, não testei a utilização do comando make no windows
+> somente para sistemas unix como linux ou mac, não testei a utilização do comando make no windows
 
 Este repositório tem um arquivo chamado [makefile](/makefile) para facilitar a execução desse projeto.
 
