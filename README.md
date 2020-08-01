@@ -50,7 +50,9 @@ Para ter acesso a informação do `chat id` de uma conversa de um grupo ou uma c
 6. será exibido na conversa o `chat id` anote-o.
 7. você pode interromper a execução do comando `tepe test` do passo 4.
 
-> essa não é a unica forma de se obter o chat id de uma conversa no telegram.
+> essa não é a unica forma de se obter o chat id de uma conversa no telegram.  
+> Você pode usar o bot [`@myidbot`](https://t.me/myidbot) também  
+> geralmente ele funciona mas já teve vezes que ele não respondeu.
 
 ## Docker
 
