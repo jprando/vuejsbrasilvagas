@@ -14,7 +14,7 @@ Variáveis de ambiente utilizadas no projeto.
 
 ### DEBUG
 
-Setando com o valor `vuejsbr:vagasbot:*` será exibido no console o que esta executando no contexto desse projeto
+Setando com o valor `vuejsbr:vagasbot:*` será exibido no console o que está executando no contexto desse projeto
 
 ### TELEGRAM_BOT_TOKEN
 
