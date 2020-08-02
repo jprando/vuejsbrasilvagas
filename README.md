@@ -12,6 +12,10 @@ Este projeto foi feito para ser utilizado no grupo [VueJS Brasil 🇧🇷](https
 
 Variáveis de ambiente utilizadas no projeto.
 
+### DEBUG
+
+Setando com o valor `vuejsbr:vagasbot:*` será exibido no console o que esta executando no contexto desse projeto
+
 ### TELEGRAM_BOT_TOKEN
 
 Token do bot criado no telegram.
@@ -19,6 +23,10 @@ Token do bot criado no telegram.
 ### TELEGRAM_CHAT_ID
 
 Chat ID do usuário ou do grupo para o qual o bot deve enviar as mensagens.
+
+### LAST_DATE_REQUEST
+
+Utilizando uma data no padrão ISO (ex: `'2020-08-02T16:15:11Z'`) ao iniciar o sistema ira buscar vagas abertas a partir da data informada, se encontrar irá publicar no telegram e em seguida passará a usar a data hora atual para buscar novas vagas.
 
 ## Telegram
 
@@ -134,3 +142,7 @@ Principais libs utilizadas nesse projeto:
 - [telegraf](https://telegraf.js.org/)
 - [axios](https://github.com/axios/axios)
 - [pm2](https://pm2.keymetrics.io/)
+
+## TODO List
+
+- Implementar testes
