@@ -17,6 +17,13 @@ run: ## cria o container e o inicializa
 		-e TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID} \
 	-d ${DOCKER_IMAGE}
 
+devrun: ## cria o container, inicializa-o e envia logs para o console
+	docker run --name ${SRV_NAME} \
+		--restart=always \
+		-e TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN} \
+		-e TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID} \
+	-d ${DOCKER_IMAGE}
+
 daterun: ## inicia o container e busca vagas a partir de uma data especificada
 	docker run --name ${SRV_NAME} \
 		--restart=always \
@@ -35,7 +42,7 @@ restart: ## reinicia o container
 	docker restart ${SRV_NAME}
 
 log: ## exibe o log de execucao do container
-	docker logs ${SRV_NAME}
+	docker logs --tail 50 --follow ${SRV_NAME}
 
 _rm: ## para a execucao do container e o destroi
 	-docker stop ${SRV_NAME}
