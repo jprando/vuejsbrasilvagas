@@ -1,3 +1,6 @@
+const log = require('debug')('vuejsbr:vagasbot')
+const error = require('debug')('vuejsbr:vagasbot:error')
+
 const { watch } = require('./watch')
 
 const githubRepos = [
@@ -6,7 +9,11 @@ const githubRepos = [
 ]
 
 const watchAll = () => {
-  githubRepos.forEach(watch)
+  try {
+    githubRepos.forEach(watch)
+  } catch (err) {
+    error(err)
+  }
 }
 
 watchAll()
@@ -14,7 +21,4 @@ watchAll()
 const ONE_HOUR = 1000 * 60 * 60
 setInterval(watchAll, ONE_HOUR)
 
-console.log(
-  'VueJS Brasil Vagas iniciado...\n',
-  '- ' + githubRepos.join('\n - ')
-)
+log('VueJS Brasil Vagas iniciado')

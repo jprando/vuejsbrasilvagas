@@ -1,28 +1,35 @@
-const axios = require('axios')
-const { GITHUB_API, issuesUrl } = require('./config')
+const fetch = require('node-fetch');
+const formatISO = require('date-fns/formatISO')
+const { utcToZonedTime } = require('date-fns-tz')
+const { TIME_ZONE, issuesUrl } = require('./config')
 
-const http = axios.create({
-  baseURL: GITHUB_API
-})
+const log = require('debug')('vuejsbr:vagasbot:getIssues')
 
-let lastDateRequest = process.env.LAST_DATE_REQUEST || new Date().toISOString()
+let lastDateRequest
+
+const setLastDate = (value = new Date()) => {
+  lastDateRequest = formatISO(utcToZonedTime(value, TIME_ZONE))
+}
+
+if (process.env.LAST_DATE_REQUEST) {
+  setLastDate(new Date(process.env.LAST_DATE_REQUEST))
+} else {
+  setLastDate()
+}
+
+log('INIT: current datetime:', lastDateRequest)
 
 const getIssues = async repoName => {
-  try {
-    const result = await http.get(issuesUrl(repoName) + lastDateRequest)
-      .then(r => r.data)
-    lastDateRequest = new Date()
-    
-    const rateLimitExceeded = 'API rate limit exceeded for'
-    if (result.message && result.message.startsWith(rateLimitExceeded)) {
-      throw new Error(result.message)
-    }
-    
-    return result
-  } catch(err) {
-    console.error('getIssues', err)
-    throw err
-  }
+  log(`getting opened issues from ${repoName} since ${lastDateRequest}`)
+
+  const result = await fetch(issuesUrl(repoName) + lastDateRequest)
+    .then(response => response.json())
+
+  setLastDate()
+
+  log(`${repoName} ${result.length} issues`)
+
+  return result
 }
 
 module.exports = { getIssues }

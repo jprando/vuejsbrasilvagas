@@ -1,21 +1,29 @@
-const ERRO401 = 'TelegramError: 401: BOT_TOKEN environment is required'
-const ERRO400 = 'TelegramError: 400: CHAT_ID environment is required'
-const STARTMSG = 'Procuro vagas de VueJS por ai e publico no grupo @vuejsbrasil'
-
+const TIME_ZONE = 'America/Sao_Paulo'
 const GITHUB_API = 'https://api.github.com'
-const ISSUES = 'issues?state=open&direction=desc&since='
+const GITHUB_ISSUES = 'issues?state=open&direction=desc&since='
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID
+const TELEGRAM = {
+  botToken: process.env.TELEGRAM_BOT_TOKEN,
+  chatId: process.env.TELEGRAM_CHAT_ID,
+  sendMessageConfig: {
+    disable_web_page_preview: true,
+    parse_mode:'Markdown'
+  },
+  startMsg: 'Procuro vagas de VueJS por ai e publico no grupo @vuejsbrasil',
+  error: {
+    msg401: 'TelegramError: 401: BOT_TOKEN environment is required',
+    msg400: 'TelegramError: 400: CHAT_ID environment is required'
+  }
+}
 
-const issuesUrl= repoName => `/repos/${repoName}/${ISSUES}`
+Object.freeze(TELEGRAM)
+
+const issuesUrl= repoName => `${GITHUB_API}/repos/${repoName}/${GITHUB_ISSUES}`
+
+require('debug')('vuejsbr:vagasbot:config')('TIME_ZONE', TIME_ZONE)
 
 module.exports = {
-  GITHUB_API,
-  BOT_TOKEN,
-  CHAT_ID,
-  ERRO401,
-  ERRO400,
-  STARTMSG,
+  TIME_ZONE,
+  TELEGRAM,
   issuesUrl
 }

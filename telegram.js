@@ -1,30 +1,24 @@
 const { Telegraf } = require('telegraf')
-const { BOT_TOKEN, CHAT_ID, ERRO401, ERRO400, STARTMSG } = require('./config')
 
-if(!BOT_TOKEN) {
-  console.error(ERRO401)
-  process.exit(1)
-}
+const log = require('debug')('vuejsbr:vagasbot:telegram')
 
-if(!CHAT_ID) {
-  console.error(ERRO400)
-  process.exit(1)
-}
+const {
+  TELEGRAM: { botToken, startMsg, chatId, sendMessageConfig }
+} = require('./config')
 
-const config = { disable_web_page_preview: true, parse_mode:'Markdown' }
+require('./telegram.validation')()
 
-const bot = new Telegraf(BOT_TOKEN)
-bot.start((ctx) => ctx.reply(STARTMSG))
+const bot = new Telegraf(botToken)
+bot.start((ctx) => ctx.reply(startMsg))
 bot.launch()
 
-bot.telegram.getChat(CHAT_ID).then(console.info)
+log('INIT: bot.launch')
+
+bot.telegram.getChat(chatId).then(log)
 
 const telegramSendMessage = msg => {
-  try {
-    bot.telegram.sendMessage(CHAT_ID, msg, config)
-  } catch (err) {
-    console.error('telegramSendMessage', err)
-  }
+  log('sending message')
+  bot.telegram.sendMessage(chatId, msg, sendMessageConfig)
 }
 
 module.exports = { telegramSendMessage }

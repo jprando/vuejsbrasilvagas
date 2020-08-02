@@ -4,13 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "dev": "env DEBUG=vuejsbr:vagasbot:* node index.js",
     "build": "pm2 start index.js --container --node-version 12-alpine --image-name jprando/vuejsbrasilvagas --dist"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "telegraf": "^3.38.0"
+    "date-fns": "2.15.0",
+    "date-fns-tz": "1.0.10",
+    "debug": "4.1.1",
+    "node-fetch": "2.6.0",
+    "telegraf": "3.38.0"
   },
   "devDependencies": {
-    "pm2": "^4.4.0"
+    "pm2": "4.4.0"
   }
 }
