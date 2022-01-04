@@ -1,20 +1,20 @@
 {
   "name": "vuejsbrasilvagas",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "env DEBUG=vuejsbr:vagasbot:* node index.js",
-    "build": "pm2 start index.js --container --node-version 12-alpine --image-name jprando/vuejsbrasilvagas --dist"
+    "dev": "env DEBUG=vuejsbr:vagasbot:* node src/index.js",
+    "build": "pm2 start src/index.js --container --node-version 14-alpine --image-name jprando/vuejsbrasilvagas --dist"
   },
   "dependencies": {
     "date-fns": "2.15.0",
     "date-fns-tz": "1.0.10",
     "debug": "4.1.1",
-    "node-fetch": "2.6.0",
+    "node-fetch": "^2.6.6",
     "telegraf": "3.38.0"
   },
   "devDependencies": {
-    "pm2": "4.4.0"
+    "pm2": "^5.1.2"
   }
 }

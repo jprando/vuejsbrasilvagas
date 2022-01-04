@@ -1,4 +1,4 @@
-FROM keymetrics/pm2:12-alpine
+FROM keymetrics/pm2:14-alpine
 
 LABEL maintainer="jeudiprando@gmail.com"
 LABEL description="https://t.me/vuejsbrasil"
@@ -16,4 +16,4 @@ RUN npm install
 ## DISTRIBUTION MODE
 ENV NODE_ENV=production
 COPY . /var/app
-CMD ["pm2-docker", "index.js", "--env", "production"]
+CMD ["pm2-docker", "src/index.js", "--env", "production"]

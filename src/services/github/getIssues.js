@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const formatISO = require('date-fns/formatISO')
 const { utcToZonedTime } = require('date-fns-tz')
-const { TIME_ZONE, issuesUrl } = require('./config')
+const { TIME_ZONE, issuesUrl } = require('../../config')
 
 const log = require('debug')('vuejsbr:vagasbot:getIssues')
 

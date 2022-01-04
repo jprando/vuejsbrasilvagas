@@ -4,9 +4,9 @@ const log = require('debug')('vuejsbr:vagasbot:telegram')
 
 const {
   TELEGRAM: { botToken, startMsg, chatId, sendMessageConfig }
-} = require('./config')
+} = require('../../config')
 
-require('./telegram.validation')()
+require('./validation')()
 
 const bot = new Telegraf(botToken)
 bot.start((ctx) => ctx.reply(startMsg))

@@ -1,5 +1,5 @@
-const { getMsg } = require('./watch.getMsg')
-const { telegramSendMessage } = require('./telegram')
+const { getMsg } = require('../services/github/getMsg')
+const { telegramSendMessage } = require('../services/telegram')
 
 const vuejsOnly = issues => issues.filter(i => 
   ['VUE', 'VUEJS', 'VUE.JS', 'VUE JS'].some(vuejs =>

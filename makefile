@@ -1,5 +1,5 @@
-TELEGRAM_BOT_TOKEN=??????
-TELEGRAM_CHAT_ID=????????
+TELEGRAM_BOT_TOKEN=????
+TELEGRAM_CHAT_ID=????
 
 DOCKER_IMAGE=jprando/vuejsbrasilvagas
 SRV_NAME=vuejsvagas-bot-srv
@@ -7,10 +7,10 @@ LAST_DATE=2020-07-30T12:00:00Z
 
 ##@ DOCKER
 
-pull: ## baixa ou atualiza a imagem
+pull: ## baixa ou atualiza a imagem jprando/vuejsbrasilvagas
 	docker pull ${DOCKER_IMAGE}
 
-run: ## cria o container e o inicializa
+run: ## cria um container, a partir da imagem jprando/vuejsbrasilvagas, e o inicializa
 	docker run --name ${SRV_NAME} \
 		--restart=always \
 		-e TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN} \
@@ -22,7 +22,7 @@ devrun: ## cria o container, inicializa-o e envia logs para o console
 		--restart=always \
 		-e TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN} \
 		-e TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID} \
-	-d ${DOCKER_IMAGE}
+	${DOCKER_IMAGE}
 
 daterun: ## inicia o container e busca vagas a partir de uma data especificada
 	docker run --name ${SRV_NAME} \
@@ -49,7 +49,7 @@ _rm: ## para a execucao do container e o destroi
 	docker rm ${SRV_NAME}
 
 _recreate: ## destroi o container e cria ele novamente
-	make _rm
+	-make _rm
 	make run
 
 deploy: ## atualiza a imagem, recria o container e o inicia
