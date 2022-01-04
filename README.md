@@ -116,7 +116,7 @@ ou
 
 Será exibido algumas opções para facilitar o gerenciamento do container e imagem desse projeto no docker.
 
-Edite o arquivo e configure as variáveis, que se encontram no ínicio do arquivo:
+Edite o arquivo [makefile](/makefile) e configure as variáveis, que se encontram no ínicio do arquivo:
 
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
